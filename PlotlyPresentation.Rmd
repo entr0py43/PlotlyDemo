@@ -12,12 +12,11 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Creating a Plotly 3D plot example
   
 The following code is used to create the plot below, showing the mtcars dataset variables of weight, fuel economy, horsepower, AND number of cylinders, all in one graph.  Its a powerful way to look at the relationships between several variables at once.  
-```{r code, eval=FALSE}
-library(plotly)
-
+```{r code, eval=FALSE, echo=TRUE}
 data(mtcars)
 plot_ly(data=mtcars, x = mtcars$wt, y=mtcars$mpg, z=mtcars$hp, 
-        type = "scatter3d", mode="markers", color=as.factor(mtcars$cyl)) %>%
+        type = "scatter3d", mode="markers", 
+        color=as.factor(mtcars$cyl)) %>%
       layout(
             title = "MTcars dataset in 4D",
             scene = list(
